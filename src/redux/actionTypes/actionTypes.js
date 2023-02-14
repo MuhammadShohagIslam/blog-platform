@@ -1,0 +1,4 @@
+export const LOAD_BLOGS = "LOAD_BLOGS";
+export const ADD_TO_BLOG = "ADD_TO_BLOG";
+export const REMOVE_FROM_BLOGS = "REMOVE_FROM_BLOGS";
+export const UPDATE_BLOG_FROM_BLOGS = "UPDATE_BLOG_FROM_BLOGS";

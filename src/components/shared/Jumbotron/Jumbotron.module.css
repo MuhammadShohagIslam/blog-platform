@@ -1,0 +1,71 @@
+.jumbotron {
+    background-image: url("../../../images/jumbotron1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 270px;
+    position: relative;
+}
+.jumbotron::after {
+    position: absolute;
+    content: "";
+    background-color: #000;
+    opacity: 0.7;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.jumbotronWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.jumbotronTitle {
+    font-size: 36px;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 25px;
+}
+.jumbotronDescription {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 400;
+    width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+.downloadPdf{
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+/* Start Small Devices */
+@media only screen and (max-width: 767px) {
+    .jumbotron {
+        height: 200px;
+    }
+    .jumbotronTitle {
+        font-size: 21px !important;
+        margin-bottom: 10px;
+    }
+    .jumbotronDescription {
+        width: 253px;
+    }
+    .downloadPdf{
+        font-size: 18px;
+        color: #fff;
+        cursor: pointer;
+    }
+    .jumbotronIntro{
+       height: 100% !important;
+       padding: 20px 0px; 
+    }
+} /* End Small Devices */

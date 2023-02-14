@@ -1,13 +1,80 @@
+html,
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    height: 100% !important;
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000 !important;
+}
+div#root {
+    height: 100% !important;
+}
+a {
+    text-decoration: none !important;
+    color: #fff !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+main {
+    min-height: 100% !important;
+    position: relative !important;
+}
+li {
+    list-style-type: none;
+}
+h1,
+h2,
+h3,
+h4 {
+    margin-bottom: 0px;
+}
+a {
+    text-decoration: none !important;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .show > .nav-link {
+    color: #41e0fd !important;
+}
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    bottom: -5px !important;
+}
+.swiper-pagination-bullet {
+    width: 16px !important;
+    height: 16px !important;
+    background: #fff !important;
+    opacity: 0.6 !important;
+}
+.swiper-pagination-bullet-active {
+    background: #fff !important;
+    opacity: 1 !important;
+}
+.nav-link {
+    color: #000 !important;
+}
+footer {
+    position: absolute;
+    width: 100%;
+}
+.accordion-button:not(.collapsed) {
+    color: #000 !important;
+    background-color: transparent !important;
+    box-shadow: 0 0 #fff !important;
+}
+.accordion-button:focus {
+    box-shadow: 0 0 #fff !important;
+}
+.form-check-input:checked {
+    background-color: #000 !important;
+    border-color: #fff !important;
+}
+.text-justify {
+    text-align: justify;
 }
