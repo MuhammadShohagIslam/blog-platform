@@ -30,7 +30,7 @@ const BlogCard = ({ blog, isSlideShow = true }) => {
                                 to={`/blogs/${id}`}
                             >
                                 <Button className={classes.blogCardButton}>
-                                    blog Details
+                                    Details
                                     <FaArrowRight className="ms-1" />
                                 </Button>
                             </Link>
@@ -53,15 +53,20 @@ const BlogCard = ({ blog, isSlideShow = true }) => {
                                     ? description.slice(0, 100) + "..."
                                     : description}
                             </Card.Text>
-                            <Link
-                                className={`${classes.blogCardButtonWrapper} pt-2`}
-                                to={`/blogs/${id}`}
-                            >
-                                <Button className={classes.blogCardButton}>
-                                    blog Details
-                                    <FaArrowRight className="ms-1" />
-                                </Button>
-                            </Link>
+                            <div className="mt-5 d-flex justify-content-between">
+                                <Link className={`pt-2`} to={`/blog-update/${id}`}>
+                                    <Button className={classes.blogCardButton}>
+                                        Update
+                                        <FaArrowRight className="ms-1" />
+                                    </Button>
+                                </Link>
+                                <Link className={`pt-2`} to={`/blogs/${id}`}>
+                                    <Button className={classes.blogCardButton}>
+                                        Delete
+                                        <FaArrowRight className="ms-1" />
+                                    </Button>
+                                </Link>
+                            </div>
                         </Card.Body>
                     </Card>
                 </Col>

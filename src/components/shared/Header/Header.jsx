@@ -47,6 +47,11 @@ const Header = () => {
                                         Blogs
                                     </Nav.Link>
                                 </LinkContainer>
+                                <LinkContainer to="/add-blog">
+                                    <Nav.Link className={classes.navLink}>
+                                        Add Blog
+                                    </Nav.Link>
+                                </LinkContainer>
                             </div>
                         </Nav>
                     </Navbar.Collapse>

@@ -1,4 +1,4 @@
-import { loadBlog } from "./../../actions/blogAction";
+import { loadBlog } from "../../../actions/blogAction";
 
 const loadBlogData = () => {
     return async (dispatch) => {

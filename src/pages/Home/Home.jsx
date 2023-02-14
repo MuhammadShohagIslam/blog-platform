@@ -4,7 +4,7 @@ import SectionTitle from "../../components/shared/SectionTitle/SectionTitle";
 import Layout from "../../layout/Layout";
 import { useSelector, useDispatch } from 'react-redux';
 import BlogCards from './../../components/shared/BlogCards/BlogCards';
-import loadBlogData from './../../redux/middlewares/thunk/blogFetch';
+import loadBlogData from './../../redux/middlewares/thunk/blog/blogFetch';
 
 const Home = () => {
     const [loading, setLoading] = useState(true);
