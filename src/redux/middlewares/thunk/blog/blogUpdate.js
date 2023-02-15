@@ -4,7 +4,7 @@ import { updateBlog } from "../../../actions/blogAction";
 const blogUpdate = (id, updatedBlog) => {
     return async (dispatch) => {
         const response = await axios.put(
-            `https://server-smoky-ten.vercel.app/blog/${id}`,
+            `${process.env.REACT_APP_SERVER_API}/blog/${id}`,
             updatedBlog,
             {
                 headers: {

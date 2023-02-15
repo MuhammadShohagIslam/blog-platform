@@ -16,7 +16,7 @@ const Blogs = () => {
                             <>
                                 {blogs.map((blog) => (
                                     <BlogCard
-                                        key={blog.id}
+                                        key={blog._id}
                                         blog={blog}
                                         isSlideShow={false}
                                     />

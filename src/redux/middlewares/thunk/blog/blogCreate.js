@@ -4,7 +4,7 @@ import { addBlog } from "../../../actions/blogAction";
 const blogCreate = (blog) => {
     return async (dispatch) => {
         const response = await axios.post(
-            `https://server-smoky-ten.vercel.app/services`,
+            `${process.env.REACT_APP_SERVER_API}/blog`,
             blog,
             {
                 headers: {

@@ -42,7 +42,7 @@ const BlogCards = ({ blogs, loading }) => {
                             {blogs?.length > 0 ? (
                                 <>
                                     {blogs.map((blog) => (
-                                        <SwiperSlide key={blog.id}>
+                                        <SwiperSlide key={blog._id}>
                                             <BlogCard blog={blog} />
                                         </SwiperSlide>
                                     ))}

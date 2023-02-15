@@ -5,7 +5,7 @@ import { FaArrowRight } from "react-icons/fa";
 import classes from "./BlogCard.module.css";
 
 const BlogCard = ({ blog, isSlideShow = true }) => {
-    const { id, img, name, description } = blog;
+    const { _id, img, name, description } = blog;
 
     return (
         <>
@@ -27,7 +27,7 @@ const BlogCard = ({ blog, isSlideShow = true }) => {
                             </Card.Text>
                             <Link
                                 className={`${classes.blogCardButtonWrapper} pt-2`}
-                                to={`/blogs/${id}`}
+                                to={`/blogs/${_id}`}
                             >
                                 <Button className={classes.blogCardButton}>
                                     Details
@@ -54,13 +54,13 @@ const BlogCard = ({ blog, isSlideShow = true }) => {
                                     : description}
                             </Card.Text>
                             <div className="mt-5 d-flex justify-content-between">
-                                <Link className={`pt-2`} to={`/blog-update/${id}`}>
+                                <Link className={`pt-2`} to={`/blog-update/${_id}`}>
                                     <Button className={classes.blogCardButton}>
                                         Update
                                         <FaArrowRight className="ms-1" />
                                     </Button>
                                 </Link>
-                                <Link className={`pt-2`} to={`/blogs/${id}`}>
+                                <Link className={`pt-2`} to={`/blogs/${_id}`}>
                                     <Button className={classes.blogCardButton}>
                                         Delete
                                         <FaArrowRight className="ms-1" />

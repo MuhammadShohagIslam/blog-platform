@@ -9,7 +9,8 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.q66zrl2.mongodb.net/?retryWrites=true&w=majority`;
+const uri = process.env.MONGO_URI;
+
 const client = new MongoClient(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -18,31 +19,65 @@ const client = new MongoClient(uri, {
 
 const run = async () => {
     try {
-        const db = client.db("blog-redux");
+        const db = client.db("socialMedia");
         const blogCollection = db.collection("blogs");
 
         app.get("/blogs", async (req, res) => {
-            const cursor = blogCollection.find({});
-            const blog = await cursor.toArray();
+            try {
+                const cursor = blogCollection.find({});
+                const blog = await cursor.toArray();
 
-            res.send({ status: true, data: blog });
+                res.json(blog);
+            } catch (error) {
+                res.status(501).json({ message: "Something Went Wrong!" });
+            }
         });
 
         app.post("/blog", async (req, res) => {
-            const blog = req.body;
+            try {
+                const blog = req.body;
 
-            const result = await blogCollection.insertOne(blog);
+                const result = await blogCollection.insertOne(blog);
 
-            res.send(result);
+                res.json(result);
+            } catch (error) {
+                res.status(501).json({ message: "Something Went Wrong!" });
+            }
+        });
+
+        app.put("/blog/:id", async (req, res) => {
+            try {
+                const blog = req.body;
+
+                const result = await blogCollection.findOneAndUpdate(
+                    {
+                        _id: ObjectId(req.params.id),
+                    },
+                    {
+                        $set: {
+                            ...blog,
+                        },
+                    },
+                    { upsert: true }
+                );
+
+                res.json(result);
+            } catch (error) {
+                res.status(501).json({ message: "Something Went Wrong!" });
+            }
         });
 
         app.delete("/blog/:id", async (req, res) => {
-            const id = req.params.id;
+            try {
+                const id = req.params.id;
 
-            const result = await blogCollection.deleteOne({
-                _id: ObjectId(id),
-            });
-            res.send(result);
+                const result = await blogCollection.deleteOne({
+                    _id: ObjectId(id),
+                });
+                res.json(result);
+            } catch (error) {
+                res.status(501).json({ message: "Something Went Wrong!" });
+            }
         });
     } finally {
     }

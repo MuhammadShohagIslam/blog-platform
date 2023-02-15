@@ -4,7 +4,7 @@ import { removedBlog } from "../../../actions/blogAction";
 const blogRemoved = (id) => {
     return async (dispatch) => {
         const response = await axios.delete(
-            `https://server-smoky-ten.vercel.app/blog/${id}`
+            `${process.env.REACT_APP_SERVER_API}/blog/${id}`
         );
         const data = await response.data;
         if (data.acknowledged) {

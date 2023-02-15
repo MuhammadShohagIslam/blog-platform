@@ -3,7 +3,7 @@ import { loadBlog } from "../../../actions/blogAction";
 const loadBlogData = () => {
     return async (dispatch) => {
         let response = await fetch(
-            "https://course-server-delta.vercel.app/blogs"
+            `${process.env.REACT_APP_SERVER_API}/blogs`
         );
         const data = await response.json();
         dispatch(loadBlog(data));
