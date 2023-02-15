@@ -25,11 +25,13 @@ const blogReducer = (state = initialBlogState, action) => {
             const blog = state.blogs.filter(
                 (blog) => blog._id === action.payload.id
             );
-            const blogs = state.blogs.filter(blog => blog._id !== action.payload.id);
+            const blogs = state.blogs.filter(
+                (blog) => blog._id !== action.payload.id
+            );
             let newBlog = {
                 ...blog[0],
-                ...action.payload.updateBlogData
-            }
+                ...action.payload.updateBlogData,
+            };
             return {
                 ...state,
                 blogs: [...blogs, newBlog],

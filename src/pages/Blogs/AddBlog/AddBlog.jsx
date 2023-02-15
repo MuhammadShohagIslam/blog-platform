@@ -8,7 +8,7 @@ import blogCreate from "./../../../redux/middlewares/thunk/blog/blogCreate";
 
 const AddBlog = () => {
     const dispatch = useDispatch();
-    
+
     const handleServiceSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -27,17 +27,18 @@ const AddBlog = () => {
             return toast.error("Please Enter Description!");
         }
 
-        const newServiceObj = {
+        const newBlogObj = {
             name: title,
             img: image,
             description,
+            createdAt: new Date(),
         };
 
-        dispatch(blogCreate(newServiceObj));
+        dispatch(blogCreate(newBlogObj));
         Swal.fire({
             position: "top",
             icon: "success",
-            title: `${newServiceObj?.name} Blog Is Created`,
+            title: `${newBlogObj?.name} Blog Is Created`,
             showConfirmButton: false,
             timer: 1500,
         });
