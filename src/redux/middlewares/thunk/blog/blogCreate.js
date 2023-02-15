@@ -14,7 +14,7 @@ const blogCreate = (blog) => {
         );
         const data = await response.data;
         if (data.acknowledged) {
-            dispatch(addBlog(data));
+            dispatch(addBlog({ _id: data.insertedId, ...blog }));
         }
     };
 };

@@ -13,7 +13,7 @@ const blogUpdate = (id, updatedBlog) => {
             }
         );
         const data = await response.data;
-        if (data.acknowledged) {
+        if (data.lastErrorObject.updatedExisting) {
             dispatch(updateBlog(id, updatedBlog));
         }
     };

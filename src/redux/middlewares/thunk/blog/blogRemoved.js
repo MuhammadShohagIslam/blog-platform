@@ -1,7 +1,7 @@
 import axios from "axios";
 import { removedBlog } from "../../../actions/blogAction";
 
-const blogRemoved = (id) => {
+const blogRemovedData = (id) => {
     return async (dispatch) => {
         const response = await axios.delete(
             `${process.env.REACT_APP_SERVER_API}/blog/${id}`
@@ -13,4 +13,4 @@ const blogRemoved = (id) => {
     };
 };
 
-export default blogRemoved;
+export default blogRemovedData;

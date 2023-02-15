@@ -11,7 +11,7 @@ const BlogDetails = () => {
     const blogs = useSelector((state) => state.blogs.blogs);
     let blog;
 
-    if (blogs.length) {
+    if (blogs?.length) {
         blog = blogs.filter((blog) => blog._id === id);
     }
     useEffect(() => {

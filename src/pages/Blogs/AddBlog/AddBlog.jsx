@@ -60,7 +60,7 @@ const AddBlog = () => {
                                 <Form.Control
                                     type="text"
                                     name="title"
-                                    placeholder="Enter Service Name"
+                                    placeholder="Enter Title Name"
                                 />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="image">
